@@ -57,26 +57,21 @@ def main():
 
     # show base info java process
     if args.info:
-        print 'args.info'
         JInfo.dump_info(args.pid)
 
     # find the threads that make high CPU
     if args.stack:
-        print 'args.stack'
         JStack.find_high_cpu(args.pid)
 
     # dump the heap info for JVM
     if args.map:
-        print 'args.map'
         JMemory.get_heap_info(args.pid)
 
     # get statistics of the garbage collected heap
     if args.gcstat:
-        print 'args.gcstat%s' % args.gcstat
         JMemory.get_gc_stat(args.pid, args.gcstat)
 
     if args.object:
-        print 'args.object%s' % args.object
         JMemory.get_object_stat(pid=args.pid, sleep_time=args.object)
     pass
 
